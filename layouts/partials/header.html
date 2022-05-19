@@ -1,0 +1,12 @@
+<nav>
+    {{ $image := resources.Get "/images/logo.png" }}
+    <div class="app-logo"> <img src="{{ $image.RelPermalink }}" width="32px" height="32px"> <span>{{.Site.Title}}</span></div>
+    <div></div>
+    <div class="nav-menu">
+        <ul>
+            {{ range .Site.Menus }}
+            <li></li>
+            {{ end }}
+        </ul>
+    </div>
+</nav>

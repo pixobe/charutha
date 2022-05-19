@@ -1,0 +1,12 @@
+@import "variables";
+@import "nav";
+@import "cards";
+@import "hero";
+@import "footer";
+body {
+    background-color: $main-bg;
+    color: $text-color;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}

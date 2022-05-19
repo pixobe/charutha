@@ -1,0 +1,45 @@
+nav {
+    color: $text-color;
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    line-height: 52px;
+    .app-logo {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: auto auto;
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+    .nav-menu {
+        color: $text-color;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            li {
+                display: inline;
+                padding: 0 1rem;
+
+                a {
+                    color: $text-color;
+                    text-decoration: none;
+                    &:hover {
+                        color: $text-color-light;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        grid-template-columns: 1fr;
+        .nav-menu {
+            display: none;
+        }
+    }
+}
