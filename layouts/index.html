@@ -11,16 +11,29 @@
                 <div class="hero-img sm my-1">
                     <img src="images/hero.png" width="100%" />
                 </div>
-                <button class="btn btn-primary">
-          BOOK NOW &nbsp;{{ partial "fontawesome.html" "car-side" }}
-        </button>
+                <a class="btn btn-primary" href="whatsapp://send?text={{.Site.Params.Message}}&phone=+{{.Site.Params.Phone}}">
+          BOOK NOW &nbsp;{{ partial "fontawesome.html" "car-side" }}</a
+        >
+      </div>
+    </div>
+  </section>
+  <section class="bg-even">
+    <div class="section-wrapper text-center section-wrapper-info">
+      <h1>5000</h1>
+      <div class="info-block">
+        <img src="images/travellers.png" width="100%" />
+        <div class="card">
+          <h2>Travellers booked taxi services with us</h2>
+          <p>
+            Well prepared means well travelled.Your journey starts much before
+            you take your bag and set off. We help you to find the right taxi
+            that suits your needs. We have many experienced drivers who provide
+            you the best travel experience.
+          </p>
+          <a class="btn btn-secondary">Find Out More</a>
             </div>
         </div>
-    </section>
-    <section class="bg-even">
-        <div class="section-wrapper">
-            <h1>25000</h1>
-            <h2>Friendly drivers</h2>
+        <p></p>
         </div>
     </section>
 </main>
