@@ -1,7 +1,4 @@
 :root {
-    --background-color: #16b7b7;
-    --background-color-lighter: #4dd4d4;
-    --primary-color: #f6bf4c;
     --text-color: #ffffff;
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;
@@ -11,7 +8,14 @@
 }
 
 $nav-height: 72px;
-$nav-margin: 28px;
+$nav-margin: 21px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
+$primary-color: #ffc107;
+$primary-dark: #ef8b19;
+$bg-primary: #00b9be;
+$bg-secondary: #00d4d5;
+$text-secondary: #009599;
+$text-primary: #ffffff;
+$btn-secondary: #3ededc;
