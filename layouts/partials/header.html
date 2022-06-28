@@ -1,12 +1,19 @@
+{{/*
 <nav>
-    {{ $image := resources.Get "/images/logo.png" }}
-    <div class="app-logo"> <img src="{{ $image.RelPermalink }}" width="32px" height="32px"> <span>{{.Site.Title}}</span></div>
-    <div></div>
-    <div class="nav-menu">
-        <ul>
-            {{ range .Site.Menus }}
-            <li></li>
-            {{ end }}
-        </ul>
+    <div class="logo">
+        {{ $image := resources.Get "/images/logo-light.png" }}
+        <div><img src="{{ $image.RelPermalink }}" /></div>
+    </div>
+    <div class="menu-item">
+        {{ range .Site.Menus.main }}
+        <div>{{ .Name }}</div>
+        {{ end }}
+    </div>
+    <div class="icons">
+        <div class="icon-wrapper">
+            {{ partial "fontawesome.html" "facebook-f" }}
+        </div>
+        <div class="icon-wrapper">{{ partial "fontawesome.html" "twitter" }}</div>
     </div>
 </nav>
+*/}}

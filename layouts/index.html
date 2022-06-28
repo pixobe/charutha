@@ -1,6 +1,27 @@
 {{ define "main" }}
-<div class="jumbotron text-center">
-    <h1 class="title">{{ .Site.Title }}</h1>
-    <h4>Desktop and Web Applications</h4>
-</div>
+<main aria-role="main">
+    <section class="bg-odd">
+        <div class="section-wrapper hero">
+            <div class="hero-img md">
+                <img src="images/hero.png" width="100%" />
+            </div>
+            <div class="content">
+                <h1>{{ .Site.Title }}</h1>
+                <h2>{{ .Site.Params.Caption }}</h2>
+                <div class="hero-img sm my-1">
+                    <img src="images/hero.png" width="100%" />
+                </div>
+                <button class="btn btn-primary">
+          BOOK NOW &nbsp;{{ partial "fontawesome.html" "car-side" }}
+        </button>
+            </div>
+        </div>
+    </section>
+    <section class="bg-even">
+        <div class="section-wrapper">
+            <h1>25000</h1>
+            <h2>Friendly drivers</h2>
+        </div>
+    </section>
+</main>
 {{ end }}

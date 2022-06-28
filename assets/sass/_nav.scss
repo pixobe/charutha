@@ -1,45 +1,31 @@
+$logo-size: 32px;
 nav {
-    color: $text-color;
+    width: 100%;
     display: grid;
-    grid-template-columns: 200px 1fr auto;
-    box-sizing: border-box;
-    padding: 0.5rem 1rem;
-    line-height: 52px;
-    .app-logo {
-        display: grid;
-        justify-content: center;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    margin: $nav-margin auto;
+    height: $nav-height;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    gap: 20px;
+    .menu-item,
+    .icons {
+        display: flex;
+        gap: 20px;
+    }
+    .logo {
+        background-color: var(--primary-color);
+        height: 42px;
+        width: 42px;
+        display: flex;
         align-items: center;
-        grid-template-columns: auto auto;
-        font-size: 24px;
-        text-transform: uppercase;
-    }
-    .nav-menu {
-        color: $text-color;
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            li {
-                display: inline;
-                padding: 0 1rem;
-
-                a {
-                    color: $text-color;
-                    text-decoration: none;
-                    &:hover {
-                        color: $text-color-light;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    nav {
-        grid-template-columns: 1fr;
-        .nav-menu {
-            display: none;
+        justify-content: center;
+        img {
+            width: $logo-size;
+            height: $logo-size;
+            display: block;
         }
     }
 }

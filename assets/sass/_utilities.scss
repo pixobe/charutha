@@ -1,0 +1,138 @@
+@import "variables";
+.icon {
+    display: inline-block;
+    position: relative;
+    height: 1.5em;
+    width: 1.5em;
+    svg {
+        height: 100%;
+        width: 100%;
+        path {
+            fill: currentColor;
+        }
+    }
+}
+
+.icon-wrapper {
+    display: flex;
+    height: 2em;
+    width: 2em;
+    padding: 0.5em;
+    background-color: var(--background-color-lighter);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.card {
+    border: 1px solid #d2fafa;
+    background-color: var(--background-color-lighter);
+}
+
+
+/*Margin*/
+
+.m1 {
+    margin: 1em;
+}
+
+.my-1 {
+    margin: 1em 0;
+}
+
+
+/**
+ Media rules
+**/
+
+// small screen
+@media only screen and (max-width: $breakpoint-md) {
+    .sm {
+        display: block;
+    }
+    .lg,
+    .md,
+    .xl {
+        display: none;
+    }
+    .hide-sm {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: $breakpoint-md) {
+    .md {
+        display: block !important;
+    }
+    .sm,
+    .lg,
+    .xl {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: $breakpoint-lg) {
+    .lg {
+        display: block !important;
+    }
+    .sm,
+    .md,
+    .xl {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: var(--breakpoint-xl)) {
+    .xl {
+        display: block !important;
+    }
+    .lg,
+    .md,
+    .sm {
+        display: none;
+    }
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    .section-wrapper {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+.bg-odd {
+    background-color: #00b9be;
+    color: #ffffff;
+}
+
+.bg-even {
+    background-color: #00d4d5;
+    color: #ffffff;
+    h2 {
+        color: #009599;
+    }
+}
+
+.btn {
+    display: flex;
+    width: 100%;
+    padding: 1.2em;
+    margin: 1em 0;
+    font-size: 1em;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: #ffc107;
+    color: #ffffff;
+    border: 0;
+    border-bottom: 5px solid #ef8b19;
+}

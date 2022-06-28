@@ -1,17 +1,17 @@
-//colors
-$primary-color: #121212;
-$secondar-color: #ff9800;
-$text-color: rgba(0, 0, 0, 0.87);
-$text-color-light: rgba(0, 0, 0, 0.6);
+:root {
+    --background-color: #16b7b7;
+    --background-color-lighter: #4dd4d4;
+    --primary-color: #f6bf4c;
+    --text-color: #ffffff;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+}
 
-// set -2
-/*
- Blue shade  (32,40,83)
- Orange
- 231,137,57
- 211,105,44
-*/
-
-$main-bg: #ffffff;
-
-$border-radius: 8px;
+$nav-height: 72px;
+$nav-margin: 28px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
