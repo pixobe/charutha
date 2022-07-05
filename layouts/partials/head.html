@@ -1,11 +1,28 @@
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ .Title}}</title>
-    {{ $sass := resources.Get "sass/main.scss" }} {{ $style := $sass | resources.ToCSS }} {{ $styleIntegrity := $style | resources.Fingerprint "sha512" }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="" /> {{ $favico := resources.Get "/images/favicon.ico" }}
-    <link rel="icon" type="image/x-icon" href="{{ $favico.RelPermalink }}" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {{ $Title := print .Site.Title " | " .Title }} {{ if .IsHome }}{{ $Title =
+  .Site.Title }}{{ end }}
+
+  <meta property="og:title" content="{{$Title}}" />
+  <meta property="og:type" content="software" />
+  <meta property="og:url" content="{{.Page.RelPermalink}}" />
+  <meta property="og:image" content="/images/logo.png" />
+
+  <meta property="og:description" content="{{.Site.Params.description}}" />
+
+  <title>{{ .Title}}</title>
+  {{ $sass := resources.Get "sass/main.scss" }} {{ $style := $sass |
+  resources.ToCSS }} {{$mincss := $style | minify}}
+
+  <link rel="stylesheet" href="{{ $mincss.RelPermalink }}" integrity="" />
+  {{ $favico := resources.Get "/images/favicon.ico" }}
+  <link rel="icon" type="image/x-icon" href="{{ $favico.RelPermalink }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
 </head>
