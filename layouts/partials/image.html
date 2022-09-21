@@ -1,0 +1,4 @@
+{{ with .Resources.GetMatch "sunset.jpg" }} {{ with .Resize (printf "%dx%d webp"
+.Width .Height) }}
+<img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" />
+{{ end }} {{ end }}
