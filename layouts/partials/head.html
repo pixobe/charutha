@@ -1,7 +1,52 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ .Title}}</title>
+
+  {{ $Title := print .Title " | " .Site.Params.Description }}
+  <title>{{$Title}}</title>
+
+  <!-- image-->
+  <!-- get resource-->
+  {{$image_resource := ""}}
+  <!--dummy-->
+  {{if (.Page.Params.MediaImage ) }}
+  <!--dummy-->
+  {{ $image_resource = resources.Get .Page.Params.MediaImage}}
+  <!--dummy-->
+  {{ else if (.Site.Params.MediaImage )}}
+  <!-- site level-->
+  {{ $image_resource = resources.Get .Site.Params.MediaImage}}
+  <!--site level-->
+  {{end}}
+
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:type" content="image" />
+  <meta property="og:title" content="{{$Title}}" />
+  <meta property="og:description" content="{{.Site.Params.Description}}" />
+  {{with $image_resource }}
+  <!--dummy-->
+  <meta property="og:image" content="{{$image_resource.Permalink}}" />
+  <!--dummy-->
+  {{end}}
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary" />
+  <meta name="twitter:site" content="{{.Site.Params.twitter}}" />
+  <meta property="twitter:url" content="{{.Site.BaseURL}}" />
+  <meta property="twitter:title" content="{{$Title}}" />
+  <meta property="twitter:description" content="{{.Site.Params.Description}}" />
+
+  {{with $image_resource }}
+  <!--dummy-->
+  <meta property="twitter:image" content="{{$image_resource.Permalink}}" />
+  <!---->
+  {{end}}
+
+  <!-- others-->
+  <link rel="canonical" href="{{ .Permalink }}" />
+
+  <!--Css-->
+
   {{ $css := resources.Get "css/output.css" }} {{$mincss := $css | minify}}
   <link rel="stylesheet" href="{{ $mincss.RelPermalink }}" integrity="" />
 
