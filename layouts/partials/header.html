@@ -21,14 +21,16 @@
         tabindex="0"
         class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
       >
-        <li><a>Homepage</a></li>
-        <li><a>Blog</a></li>
-        <li><a>Packages</a></li>
+        <li><a href="/">Homepage</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/packages">Packages</a></li>
       </ul>
     </div>
   </div>
   <div class="navbar-center">
-    <a class="btn btn-ghost normal-case text-xl">{{.Site.Title}}</a>
+    <a class="btn btn-ghost normal-case text-xl heading-navbar" href="/"
+      >{{.Site.Title}}</a
+    >
   </div>
   <div class="navbar-end">
     <div class="hidden md:block">

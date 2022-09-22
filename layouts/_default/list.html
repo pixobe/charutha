@@ -1,5 +1,8 @@
 {{ define "main" }}
-<main>
-  <h2>List Page</h2>
+<main class="min-h-screen">
+  <header class="bg-yellow-900 p-8 text-center bg-om">
+    <h1 class="text-white text-5xl font-bold">{{.Page.Title}}</h1>
+  </header>
+  <div class="prose prose-lg mx-auto p-16">{{.Content}}</div>
 </main>
-{{ end }}
+{{ end}}
