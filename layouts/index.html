@@ -23,22 +23,24 @@
         <p class="max-w-2xl mb-6 font-medium text-xl text-yellow-800 uppercase">
           {{.Site.Params.description}}
         </p>
-        {{ $tel := replaceRE "[-+\\s]" "" .Site.Params.tel}}
-        <!---->
-        {{ $whatsapp := ( printf "https://wa.me/%s?text=%s" $tel
-        .Site.Params.msg) }}
-        <a
-          href="{{$whatsapp | safeURL}}"
-          class="btn btn-accent"
-          target="_blank"
-        >
-          <div class="h-6 w-6 mr-2">{{ partial "svg.html" "whatsapp"}}</div>
-          {{.Site.Params.hero.button_label_1}}
-        </a>
-        <a href="/packages" class="btn btn-secondary">
-          <div class="h-6 w-6 mr-2">{{ partial "svg.html" "diwali"}}</div>
-          {{.Site.Params.hero.button_label_2}}
-        </a>
+        <div class="flex flex-row gap-4 flex-wrap">
+          {{ $tel := replaceRE "[-+\\s]" "" .Site.Params.tel}}
+          <!---->
+          {{ $whatsapp := ( printf "https://wa.me/%s?text=%s" $tel
+          .Site.Params.msg) }}
+          <a
+            href="{{$whatsapp | safeURL}}"
+            class="btn btn-accent"
+            target="_blank"
+          >
+            <div class="h-6 w-6 mr-2">{{ partial "svg.html" "whatsapp"}}</div>
+            {{.Site.Params.hero.button_label_1}}
+          </a>
+          <a href="/packages" class="btn btn-secondary">
+            <div class="h-6 w-6 mr-2">{{ partial "svg.html" "diwali"}}</div>
+            {{.Site.Params.hero.button_label_2}}
+          </a>
+        </div>
       </div>
       <div class="lg:mt-0 lg:col-span-3 lg:flex">
         <img

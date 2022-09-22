@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="navbar-center">
-    <a class="btn btn-ghost normal-case text-xl heading-navbar" href="/"
+    <a class="btn btn-ghost normal-case text-xl heading-logo" href="/"
       >{{.Site.Title}}</a
     >
   </div>
@@ -31,7 +31,7 @@
     <div class="block md:hidden">
       {{ with .Site.Params.tel}} {{ $tel := replaceRE "[-+\\s]" "" .}}
       <a href="tel:{{$tel |safeURL}}" class="h-6 w-6"
-        ><div class="h-6 w-6 animate-ping">
+        ><div class="h-6 w-6 animate-ping mx-4">
           {{ partial "svg.html" "telephone"}}
         </div></a
       >
