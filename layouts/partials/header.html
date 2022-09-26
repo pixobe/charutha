@@ -11,9 +11,9 @@
         tabindex="0"
         class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
       >
-        <li><a href="/">Homepage</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/packages">Packages</a></li>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{.URL}}">{{.Name}}</a></li>
+        {{ end }}
       </ul>
     </div>
   </div>
