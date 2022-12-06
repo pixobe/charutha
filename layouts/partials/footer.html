@@ -3,12 +3,21 @@
 >
   <div class="items-center grid-flow-col">
     <div class="h-16 w-16 text-yellow-400">
-      {{partial "svg.html" "kalasha"}}
+      {{partial "svg.html" .Site.Params.logo}}
     </div>
     {{ $tel_formatted := .Site.Params.tel}}
     <div class="flex flex-col gap-1 ml-2">
-      <div>{{.Site.Title}}</div>
+      <div class="underline">{{.Site.Title}}</div>
       <div>{{.Site.Params.description}}</div>
+      <div>
+        {{with .Site.Params.address}}
+        <div>{{.address_line_1}}</div>
+        <div>{{.address_line_2}}, {{.city}} {{.zipcode}}</div>
+        <div>{{.state}} {{.country}}</div>
+        <div>{{.landmark}}</div>
+        {{end}}
+      </div>
+
       <div>
         {{ with .Site.Params.tel}} {{ $tel := replaceRE "[-+\\s]" "" .}}
         <a class="btn btn-accent btn-xs gap-2" href="tel:{{$tel | safeURL}}">
@@ -16,6 +25,12 @@
           {{$tel_formatted}}
         </a>
         {{end}}
+        <a
+          class="btn btn-accent btn-xs gap-2"
+          href="mailto:{{.Site.Params.email}}"
+          ><div class="h-5 w-5">{{partial "svg.html" "email"}}</div>
+          <span class="!lowercase">{{.Site.Params.email}}</span></a
+        >
       </div>
     </div>
   </div>
